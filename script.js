@@ -1,5 +1,5 @@
-const API_KEY = "24de63d712d94ce3b2ba1e018a9bd62c";
-const url = "https://newsapi.org/v2/everything?q=";
+const API_KEY = "670bd92612d4660ab68d92ce3d06c01d";
+const url = "http://api.mediastack.com/v1/news";
 
 window.addEventListener("load", () => fetchNews("India"));
 
@@ -8,7 +8,8 @@ function reload() {
 }
 
 async function fetchNews(query) {
-    const res = await fetch(`${url}${query}&apiKey=${API_KEY}`);
+    // const res = await fetch(`${url}${query}&apiKey=${API_KEY}`);
+    const res = await fetch(`url?access_key=${API_KEY}`)
     const data = await res.json();
     console.log(data);
     bindData(data.articles);
